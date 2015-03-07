@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MUndecoratedWindow()
+comment1.params=title
+comment1.target=MUndecoratedWindow(java.lang.String)
+comment2.params=size
+comment2.target=MUndecoratedWindow(java.awt.Dimension)
+comment3.params=title\ size
+comment3.target=MUndecoratedWindow(java.lang.String,\ java.awt.Dimension)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5
