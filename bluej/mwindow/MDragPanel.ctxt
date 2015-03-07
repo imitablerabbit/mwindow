@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=parent
+comment0.target=MDragPanel(javax.swing.JFrame)
+comment1.params=e
+comment1.target=void\ mousePressed(java.awt.event.MouseEvent)
+comment2.params=e
+comment2.target=void\ mouseDragged(java.awt.event.MouseEvent)
+numComments=3

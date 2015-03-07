@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MCheckBox()
+comment1.params=text
+comment1.target=MCheckBox(java.lang.String)
+comment2.params=text\ checked
+comment2.target=MCheckBox(java.lang.String,\ boolean)
+comment3.params=text
+comment3.target=void\ setText(java.lang.String)
+comment4.params=
+comment4.target=boolean\ isSelected()
+comment5.params=checked
+comment5.target=void\ setSelected(boolean)
+comment6.params=listener
+comment6.target=void\ addMActionListener(MActionListener)
+comment7.params=listener
+comment7.target=void\ removeMActionListener(MActionListener)
+comment8.params=event
+comment8.target=void\ fireMAction(MActionEvent)
+comment9.params=args
+comment9.target=void\ main(java.lang.String[])
+numComments=10

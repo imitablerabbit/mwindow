@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=MDragWindow()
+comment1.params=title
+comment1.target=MDragWindow(java.lang.String)
+comment2.params=size
+comment2.target=MDragWindow(java.awt.Dimension)
+comment3.params=title\ size
+comment3.target=MDragWindow(java.lang.String,\ java.awt.Dimension)
+comment4.params=title\ size\ hasDecorations
+comment4.target=MDragWindow(java.lang.String,\ java.awt.Dimension,\ boolean)
+comment5.params=title\ size\ hasDecorations\ hasTitle\ hasButtons
+comment5.target=MDragWindow(java.lang.String,\ java.awt.Dimension,\ boolean,\ boolean,\ boolean)
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+numComments=7
