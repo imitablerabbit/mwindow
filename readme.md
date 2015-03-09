@@ -2,7 +2,7 @@
 
 <h2>Alternative design for Java swing</h2>
 
-Version 1.0:
+<strong>Version 1.0:</strong>
 
 To Do:
 
