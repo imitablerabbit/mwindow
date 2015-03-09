@@ -1,7 +1,7 @@
 # mwindow
 Alternative design for Java swing
 
-Version 1.0
+Version 1.0:
 
 To Do:
 
