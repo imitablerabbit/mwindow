@@ -34,7 +34,7 @@ public class MOptionPane extends MDragWindow
 	public static void createMessageDialog(String title, String message, Dimension size)
 	{
 		//Create the window
-		MOptionPane window = new MOptionPane();
+		MOptionPane window = new MOptionPane(title, size);
 		MPanel pane = new MPanel();
 		pane.setLayout(null);
 		window.add(pane);
@@ -61,7 +61,8 @@ public class MOptionPane extends MDragWindow
 		int paneHeight = window.getHeight() - window.getDragBarHeight();
 				
 		//Set the position of the image
-		symbol.setBounds((paneWidth - symbolWidth) / 16, ((paneHeight - symbolHeight) / 2), symbolWidth, symbolHeight);
+		symbol.setBounds((paneWidth - symbolWidth) / 16, ((paneHeight - symbolHeight) / 2),
+						symbolWidth, symbolHeight);
 		
 		//Add the image
 		pane.add(symbol);
