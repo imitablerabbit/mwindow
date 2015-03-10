@@ -103,7 +103,22 @@ public class MDragWindow extends JFrame
 
         revalidate();   
     }
-
+    
+    //GETTERS AND SETTERS
+    //Returns the height of the title bar
+    public int getDragBarHeight()
+    {
+    	return drag.getPreferredSize().height;
+    }
+    
+    //Returns the width of the title bar
+    public int getDragBarWidth()
+    {
+    	return drag.getPreferredSize().width;
+    }    
+    
+    //TESTER
+    //main method
     public static void main(String[] args)
     {
         MDragWindow mWnd = new MDragWindow("Title", new Dimension(600, 600), true);
