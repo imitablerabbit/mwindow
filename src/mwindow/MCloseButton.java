@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
 
-class MCloseButton extends JPanel
+public class MCloseButton extends JPanel
 {
     //Has the mouse entered the button
     boolean hasEntered = false;
@@ -14,7 +14,7 @@ class MCloseButton extends JPanel
     Color backgroundColor = new Color(175, 0, 0);
     Color backgroundHoverColor = new Color(255, 255, 255, 50);
     
-    MCloseButton()
+    public MCloseButton()
     {
         setPreferredSize(new Dimension(20, 20));
 

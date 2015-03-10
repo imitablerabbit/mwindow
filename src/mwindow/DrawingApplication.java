@@ -305,7 +305,7 @@ public class DrawingApplication extends MDragWindow
         }        
     }
 
-    DrawingApplication()
+    public DrawingApplication()
     {
         //Create the window
         super("Drawing Application", new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));

@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
 
-class MMinimizeButton extends JPanel
+public class MMinimizeButton extends JPanel
 {
     boolean hasEntered = false;
 
@@ -13,7 +13,7 @@ class MMinimizeButton extends JPanel
     Color backgroundColor = new Color(0, 130, 180);
     Color backgroundHoverColor = new Color(255, 255, 255, 50);
     
-    MMinimizeButton(final JFrame parent)
+    public MMinimizeButton(final JFrame parent)
     {
         setPreferredSize(new Dimension(20, 20));
         

@@ -8,7 +8,8 @@
 
 To Do:
 
-  - Create a MOptionPane class for easy message windows.    
+  - Create a MOptionPane class for easy message windows.
+  - Change the way windows close so that one window does not close all other windows
 
 Change log:
 
@@ -16,4 +17,5 @@ Change log:
     - Add option to change position of label
     - Add option to change font of the label
   - Added easy implementation into eclipse
+  - Changed visibility of classes to public
   

@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class MPanel extends JPanel
 {
-    MPanel()
+    public MPanel()
     {
         super(); 
     }
