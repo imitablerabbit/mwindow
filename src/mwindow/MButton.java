@@ -54,17 +54,20 @@ public class MButton extends JButton
         //Fires the event when clicked
         addMouseListener(new MouseAdapter()
             {
+        		@Override
                 public void mousePressed(MouseEvent e)
                 {
                     fireMAction(new MActionEvent(this));
                 }
-
+        		
+        		@Override
                 public void mouseEntered(MouseEvent e)
                 {
                     hasEntered = true;
                     repaint();
                 }
-
+        		
+        		@Override
                 public void mouseExited(MouseEvent e)
                 {
                     hasEntered = false;
@@ -74,7 +77,7 @@ public class MButton extends JButton
     }     
 
 	//Update the dimensions of the button
-    public void updateDimensions()
+    private void updateDimensions()
     {
         width = getPreferredSize().width;
         height = getPreferredSize().height;
@@ -105,14 +108,14 @@ public class MButton extends JButton
     }    
 
     //--GETTERS AND SETTERS--
-    //Sets the background color
+    //Sets the background colour
     public void setBackgroundColor(Color color)
     {
         backgroundColor = color;
         repaint();
     }
 
-    //Returns the background color
+    //Returns the background colour
     public Color getBackground()
     {
         return backgroundColor;
@@ -122,6 +125,7 @@ public class MButton extends JButton
     public void setLabel(JLabel label)
     {
     	this.label = label;
+    	repaint();
     }
     
     //Changes the text on the CheckBox
@@ -135,12 +139,19 @@ public class MButton extends JButton
     public String getLabelText()
     {
     	return label.getText();
+    }      
+    
+    //Sets the label font
+    public void setLabelFont(Font font)
+    {
+    	labelFont = font;
+    	label.setFont(labelFont);
     }
     
-    //Returns the dimensions of the button
-    public Dimension getButtonDimension()
+    //Gets the labels font
+    public Font getLabelFont()
     {
-    	return new Dimension(width, height);
+    	return labelFont;
     }
     
     //Sets the label position
@@ -162,6 +173,13 @@ public class MButton extends JButton
             setLayout(null);
             label.setBounds((width - labelWidth) / 2, (height - labelHeight) / 2, labelWidth, labelHeight);
     	}
+    }
+    
+    //Returns the dimensions of the button
+    public Dimension getButtonSize()
+    {
+    	updateDimensions();
+    	return new Dimension(width, height);
     }
 
     //--ACTION EVENTS--
@@ -210,7 +228,8 @@ public class MButton extends JButton
             });
         button.setBackgroundColor(new Color(200, 100, 100));
         button.setPreferredSize(new Dimension(200, 100));
-        button.setLabelPosition(RIGHT);
+        button.setLabelFont(new Font("Dialog", Font.BOLD, 18));
+        button.setLabelPosition(CENTER);
         pane.add(button);
         window.add(pane);
         window.revalidate();
