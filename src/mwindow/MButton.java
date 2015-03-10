@@ -3,6 +3,7 @@ package mwindow;
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
+
 import javax.swing.event.*;
 import javax.swing.*;
 
@@ -17,16 +18,16 @@ public class MButton extends JButton
     //Drawing dimensions
     private int width;
     private int height;
-    private int wOffset = 30;
-    private int hOffset = 25;
+    private int labelWidth;
+    private int labelHeight;
 
-    //Color
+    //Colour
     private Color backgroundColor = Color.DARK_GRAY;
     private Color backgroundColorHover = new Color(255, 255, 255, 50);
 
     //Font for Label
     private Font labelFont = new Font("Dialog", Font.BOLD, 12);
-
+    
     //The EventListeners
     protected EventListenerList mActionListeners = new EventListenerList();
 
@@ -35,7 +36,7 @@ public class MButton extends JButton
         this("");
     }
 
-    //Creates the Checkbox
+    //Creates the Button
     public MButton(String text)
     {
         super();        
@@ -44,12 +45,8 @@ public class MButton extends JButton
         //Add the Label
         label = new JLabel(text);
         label.setForeground(UIManager.getColor("Panel.background"));
-        label.setFont(labelFont);
-        add(label);        
-
-        //Set the width and height from label
-        width = label.getWidth();
-        height = label.getHeight();
+        label.setFont(labelFont);        
+        add(label);
 
         //Set the background
         setBackground(UIManager.getColor("panel.background"));
@@ -73,7 +70,16 @@ public class MButton extends JButton
                     hasEntered = false;
                     repaint();
                 }
-            });
+            });       
+    }     
+
+	//Update the dimensions of the button
+    public void updateDimensions()
+    {
+        width = getPreferredSize().width;
+        height = getPreferredSize().height;
+        labelWidth = label.getPreferredSize().width;
+        labelHeight = label.getPreferredSize().height;	
     }
 
     //Paint the button
@@ -81,7 +87,9 @@ public class MButton extends JButton
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-
+        
+        updateDimensions();
+        
         //Create the g2 Object
         Graphics2D g2 = (Graphics2D)g;
 
@@ -89,7 +97,7 @@ public class MButton extends JButton
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         setBackground(UIManager.getColor("Panel.background"));
         g2.setColor(backgroundColor);
-        g2.fill(new Rectangle2D.Double(0, 0, getWidth(), getHeight()));
+        g2.fill(new Rectangle2D.Double(0, 0, getWidth(), getHeight()));        
 
         if(hasEntered)
         {
@@ -113,17 +121,44 @@ public class MButton extends JButton
     }
 
     //Changes the text on the CheckBox
-    public void setText(String text)
+    public void setLabelText(String text)
     {
         label.setText(text);
         repaint();
     }
 
     //Returns the text
-    /*public String getText()
+    public String getLabelText()
     {
-    return label.getText();
-    }*/
+    	return label.getText();
+    }
+    
+    //Returns the dimensions of the button
+    public Dimension getButtonDimension()
+    {
+    	return new Dimension(width, height);
+    }
+    
+    //Sets the label position
+    public void setLabelPosition(int position)
+    {
+    	updateDimensions();
+    	if (position == LEFT)
+    	{
+    		setLayout(null);
+    		label.setBounds(((width - labelWidth) / 8), (height - labelHeight) / 2, labelWidth, labelHeight);
+    	}
+    	else if (position == RIGHT)
+    	{
+    		setLayout(null);
+    		label.setBounds(((width - labelWidth) / 8) * 7, (height - labelHeight) / 2, labelWidth, labelHeight);    		
+    	}
+    	else
+    	{
+            setLayout(null);
+            label.setBounds((width - labelWidth) / 2, (height - labelHeight) / 2, labelWidth, labelHeight);
+    	}
+    }
 
     //--ACTION EVENTS--
     //Add a Listener
@@ -170,6 +205,8 @@ public class MButton extends JButton
                 }
             });
         button.setBackgroundColor(new Color(200, 100, 100));
+        button.setPreferredSize(new Dimension(200, 100));
+        button.setLabelPosition(RIGHT);
         pane.add(button);
         window.add(pane);
         window.revalidate();
