@@ -23,7 +23,7 @@ Change log:
     - Add option to change position of label
     - Add option to change font of the label
   - MOptionPane:
-    -Created a basic message box method(unfinished)
+    -Created a basic message box method (unfinished)
   - Added easy implementation into eclipse
   - Changed visibility of classes to public
   
