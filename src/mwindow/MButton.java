@@ -88,8 +88,6 @@ public class MButton extends JButton
     {
         super.paintComponent(g);
         
-        updateDimensions();
-        
         //Create the g2 Object
         Graphics2D g2 = (Graphics2D)g;
 
@@ -120,6 +118,12 @@ public class MButton extends JButton
         return backgroundColor;
     }
 
+    //Set the label
+    public void setLabel(JLabel label)
+    {
+    	this.label = label;
+    }
+    
     //Changes the text on the CheckBox
     public void setLabelText(String text)
     {
