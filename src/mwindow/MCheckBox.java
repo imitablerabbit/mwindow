@@ -19,8 +19,8 @@ public class MCheckBox extends JComponent
     protected EventListenerList mActionListeners = new EventListenerList();
 
     //Color variables
-    Color squareBackgroundColor = new Color(50, 50, 50);
-    Color squareInnerColor = Color.LIGHT_GRAY;
+    Color squareBackgroundColor = MColor.mCheckBoxColor;
+    Color squareInnerColor = MColor.mCheckBoxForegroundColor;
 
     //--SQUARE CLASS--
     //Box that gets checked
@@ -47,7 +47,7 @@ public class MCheckBox extends JComponent
 
             //Set anti-aliasing
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            setBackground(UIManager.getColor("Panel.background"));
+            setBackground(MColor.backgroundColor);
 
             //Draw the background square
             g2.setColor(squareBackgroundColor);
@@ -109,7 +109,7 @@ public class MCheckBox extends JComponent
         this.checked = checked;
 
         //Set the background as transparent
-        setBackground(UIManager.getColor("panel.background"));
+        setBackground(MColor.backgroundColor);
 
         //Fires the event when clicked
         addMouseListener(new MouseHandler());

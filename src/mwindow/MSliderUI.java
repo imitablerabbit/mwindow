@@ -21,7 +21,7 @@ public class MSliderUI extends BasicSliderUI
 
         g.translate(knobBounds.x, knobBounds.y);
 
-        g.setColor(Color.DARK_GRAY);
+        g.setColor(MColor.mSliderColor);
         g.fillRect(0, 0, w, h - 3);
     }
 
@@ -32,7 +32,7 @@ public class MSliderUI extends BasicSliderUI
         int w = trackBounds.width;
         int h = trackBounds.height;
 
-        g.setColor(Color.LIGHT_GRAY);
+        g.setColor(MColor.mSliderForegroundColor);
         g.fillRect((thumbRect.width / 2) + 2, (h / 8) * 4, w, h / 4);
     }
 

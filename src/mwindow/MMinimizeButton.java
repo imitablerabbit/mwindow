@@ -10,7 +10,7 @@ public class MMinimizeButton extends JPanel
     boolean hasEntered = false;
 
     //Color variables
-    Color backgroundColor = new Color(0, 130, 180);
+    Color backgroundColor = MColor.mMinimizeButtonColor;
     Color backgroundHoverColor = new Color(255, 255, 255, 50);
     
     public MMinimizeButton(final JFrame parent)

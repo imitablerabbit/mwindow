@@ -55,6 +55,7 @@ public class MDragWindow extends JFrame
         this.title = title;
         this.size = size;
         setSize(size); 
+        setBackground(MColor.backgroundColor);
 
         //Centers the window
         setLocationRelativeTo(null);
@@ -67,7 +68,7 @@ public class MDragWindow extends JFrame
         //Creates the DragPanel at the top of the window    
         drag = new MDragPanel(this);
         add(drag, BorderLayout.NORTH);
-        dragBarColor = Color.DARK_GRAY;
+        dragBarColor = MColor.componentColor;
 
         if(hasDecorations)
         {
@@ -95,7 +96,7 @@ public class MDragWindow extends JFrame
                 
                 //Create the title
                 JLabel titleLabel = new JLabel(title);
-                titleLabel.setForeground(Color.WHITE);
+                titleLabel.setForeground(MColor.foregroundColor);
                 titleLabel.setFont(new Font("Dialog", Font.BOLD, 14));
                 titlePanel.add(titleLabel);
                 drag.add(titlePanel, BorderLayout.WEST);  

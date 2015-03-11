@@ -22,8 +22,8 @@ public class MRadioButton extends JComponent
     protected EventListenerList mActionListeners = new EventListenerList();
     
     //Color variables
-    Color circleBackgroundColor = new Color(50, 50, 50);
-    Color circleInnerColor = Color.LIGHT_GRAY;
+    Color circleBackgroundColor = MColor.componentColor;
+    Color circleInnerColor = MColor.mRadioButtonForegroundColor;
 
     //--OTHER CLASSES--
     //Draws the Button next to the label
@@ -50,7 +50,7 @@ public class MRadioButton extends JComponent
             //Create the g2 object
             Graphics2D g2 = (Graphics2D)g;
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            setBackground(UIManager.getColor("Panel.background"));
+            setBackground(MColor.backgroundColor);
 
             //Draw outer ellipse
             g2.setColor(circleBackgroundColor);
@@ -106,7 +106,7 @@ public class MRadioButton extends JComponent
         this.checked = checked;
 
         //Set the background as transparent
-        setBackground(UIManager.getColor("panel.background"));
+        setBackground(MColor.backgroundColor);
 
         //Fires the event when clicked
         addMouseListener(new MouseHandler());

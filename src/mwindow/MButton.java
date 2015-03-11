@@ -7,6 +7,8 @@ import java.awt.event.*;
 import javax.swing.event.*;
 import javax.swing.*;
 
+import jdk.nashorn.internal.codegen.ClassEmitter;
+
 public class MButton extends JButton
 {
     //The text
@@ -22,8 +24,8 @@ public class MButton extends JButton
     private int labelHeight;
 
     //Colour
-    private Color backgroundColor = Color.DARK_GRAY;
-    private Color backgroundColorHover = new Color(255, 255, 255, 50);
+    private Color buttonColor = MColor.mButtonColor;
+    private Color buttonColorHover = new Color(255, 255, 255, 50);
 
     //Font for Label
     private Font labelFont = new Font("Dialog", Font.BOLD, 12);
@@ -44,12 +46,12 @@ public class MButton extends JButton
 
         //Add the Label
         label = new JLabel(text);
-        label.setForeground(UIManager.getColor("Panel.background"));
+        label.setForeground(MColor.foregroundColor);
         label.setFont(labelFont);        
         add(label);
 
         //Set the background
-        setBackground(UIManager.getColor("panel.background"));
+        setBackground(MColor.backgroundColor);
 
         //Fires the event when clicked
         addMouseListener(new MouseAdapter()
@@ -96,13 +98,13 @@ public class MButton extends JButton
 
         //Set anti-aliasing
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        setBackground(UIManager.getColor("Panel.background"));
-        g2.setColor(backgroundColor);
+        setBackground(MColor.backgroundColor);
+        g2.setColor(buttonColor);
         g2.fill(new Rectangle2D.Double(0, 0, getWidth(), getHeight()));        
 
         if(hasEntered)
         {
-            g2.setColor(backgroundColorHover);
+            g2.setColor(buttonColorHover);
             g2.fill(new Rectangle2D.Double(0, 0, getWidth(), getHeight()));
         }
     }    
@@ -111,14 +113,14 @@ public class MButton extends JButton
     //Sets the background colour
     public void setBackgroundColor(Color color)
     {
-        backgroundColor = color;
+        buttonColor = color;
         repaint();
     }
 
     //Returns the background colour
     public Color getBackground()
     {
-        return backgroundColor;
+        return buttonColor;
     }
 
     //Set the label
@@ -160,18 +162,19 @@ public class MButton extends JButton
     	updateDimensions();
     	if (position == LEFT)
     	{
-    		setLayout(null);
-    		label.setBounds(((width - labelWidth) / 8), (height - labelHeight) / 2, labelWidth, labelHeight);
+    		setLayout(new FlowLayout(FlowLayout.LEADING, 1, 
+    				(height - labelHeight) / 2 - 5));    		
     	}
     	else if (position == RIGHT)
     	{
-    		setLayout(null);
-    		label.setBounds(((width - labelWidth) / 8) * 7, (height - labelHeight) / 2, labelWidth, labelHeight);    		
+    		setLayout(new FlowLayout(FlowLayout.TRAILING, 1,
+    				(height - labelHeight) / 2 - 5));		
+    		
     	}
     	else
     	{
-            setLayout(null);
-            label.setBounds((width - labelWidth) / 2, (height - labelHeight) / 2, labelWidth, labelHeight);
+            setLayout(new FlowLayout(FlowLayout.CENTER, 1,
+    				(height - labelHeight) / 2 - 5));
     	}
     }
     
@@ -217,7 +220,7 @@ public class MButton extends JButton
     {
         MDragWindow window = new MDragWindow("Title", new Dimension(500,500), true);
         MPanel pane = new MPanel();
-        MButton button = new MButton("This is a Button");  
+        MButton button = new MButton("Button");  
         button.addMActionListener(new MActionListener()
             {
                 @Override
@@ -227,11 +230,10 @@ public class MButton extends JButton
                 }
             });
         button.setBackgroundColor(new Color(200, 100, 100));
-        button.setPreferredSize(new Dimension(200, 100));
+        button.setPreferredSize(new Dimension(200, 20));
         button.setLabelFont(new Font("Dialog", Font.BOLD, 18));
         button.setLabelPosition(CENTER);
         pane.add(button);
         window.add(pane);
-        window.revalidate();
     }
 }

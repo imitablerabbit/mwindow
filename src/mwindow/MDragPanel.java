@@ -16,7 +16,7 @@ public class MDragPanel extends JPanel
 
         //Gets the parent JFrame
         this.parent = parent;
-        setBackground(Color.DARK_GRAY);
+        setBackground(MColor.componentColor);
         setPreferredSize(new Dimension(parent.getWidth(), 30));
 
         //Gets the origin click

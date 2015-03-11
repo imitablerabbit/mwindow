@@ -15,7 +15,7 @@ public class MScrollUI extends BasicScrollBarUI
     public void paintTrack(Graphics g, JComponent c, Rectangle trackBounds)
     {
         Graphics2D g2 = (Graphics2D)g;
-        g2.setColor(Color.LIGHT_GRAY);
+        g2.setColor(MColor.mScrollPaneTrackColor);
         g2.fill(trackBounds);
     }
 
@@ -23,7 +23,7 @@ public class MScrollUI extends BasicScrollBarUI
     public void paintThumb(Graphics g, JComponent c, Rectangle thumbBounds)
     {
         Graphics2D g2 = (Graphics2D)g;
-        g2.setColor(Color.DARK_GRAY);
+        g2.setColor(MColor.mScrollPaneColor);
         g2.fill(thumbBounds);
     }
 

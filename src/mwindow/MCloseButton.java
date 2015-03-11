@@ -14,7 +14,7 @@ public class MCloseButton extends JPanel
     boolean hasEntered = false;
 
     //Color variables
-    Color backgroundColor = new Color(175, 0, 0);
+    Color backgroundColor = MColor.mCloseButtonColor;
     Color backgroundHoverColor = new Color(255, 255, 255, 50);
     
     public MCloseButton(JFrame parent)
@@ -61,7 +61,7 @@ public class MCloseButton extends JPanel
 
         //Draw the cross
         Graphics2D g2 = (Graphics2D)g;
-        g2.setColor(Color.WHITE);
+        g2.setColor(MColor.foregroundColor);
         g2.drawLine(5, 5, 15, 15);
         g2.drawLine(15, 5, 5, 15);
     }

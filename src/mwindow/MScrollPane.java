@@ -15,8 +15,6 @@ public class MScrollPane extends JScrollPane
     
     public static void main(String[] args)
     {
-        MDragWindow wnd = new MDragWindow();
-
-        wnd.revalidate();
+    	
     }
 }
