@@ -37,7 +37,7 @@ public class MOptionPane extends MDragWindow
 		add(pane);
 		
 		//Create message label
-		JTextArea text = new JTextArea(message);
+		MTextArea text = new MTextArea(message);
 		text.setBackground(MColor.mOptionPaneBackgroundColor);
 		text.setEditable(false);
 				
@@ -71,11 +71,11 @@ public class MOptionPane extends MDragWindow
 		}
 		
 		//Create JLabel for image
-		JLabel symbol = new JLabel();
+		MLabel symbol = new MLabel();
 		symbol.setIcon(new ImageIcon(image));
 		
 		//Create the text
-		JTextArea text = new JTextArea(message);
+		MTextArea text = new MTextArea(message);
 		text.setEditable(false);
 		text.setBackground(MColor.mOptionPane_WarningBackgroundColor);
 

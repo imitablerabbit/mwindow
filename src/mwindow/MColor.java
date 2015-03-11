@@ -11,6 +11,7 @@ public class MColor {
 	public static Color mOptionPaneBackgroundColor = backgroundColor;
 	public static Color mOptionPane_MessageBackgroundColor = backgroundColor;
 	public static Color mOptionPane_WarningBackgroundColor = backgroundColor;
+	public static Color mTextAreaBackgroundColor = backgroundColor;
 	
 	//Main Component Colors
 	public static Color componentColor = Color.DARK_GRAY;
@@ -29,7 +30,31 @@ public class MColor {
 	
 	public static Color mCheckBoxForegroundColor = foregroundColor;
 	public static Color mRadioButtonForegroundColor = foregroundColor;
-	public static Color mScrollPaneTrackColor = Color.LIGHT_GRAY;
-	public static Color mSliderForegroundColor = Color.LIGHT_GRAY;
+	public static Color mScrollPaneTrackColor = new Color(componentColor.getRed(), componentColor.getGreen(), componentColor.getBlue(), 50);
+	public static Color mSliderForegroundColor = new Color(componentColor.getRed(), componentColor.getGreen(), componentColor.getBlue(), 50);
+	
+	public static void updateColor()
+	{
+		//Offshoot background colors
+		mOptionPaneBackgroundColor = backgroundColor;
+		mOptionPane_MessageBackgroundColor = backgroundColor;
+		mOptionPane_WarningBackgroundColor = backgroundColor;
+		mTextAreaBackgroundColor = backgroundColor;
+		
+		//Offshoot Component Colors
+		mButtonColor = componentColor;
+		mCheckBoxColor = componentColor;
+		mRadioButtonColor = componentColor;
+		mScrollPaneColor = componentColor;
+		mSliderColor = componentColor;
+		mCloseButtonColor = new Color(175, 0, 0);
+		mMinimizeButtonColor = new Color(0, 130, 180);		
+		
+		//Foreground colours
+		mCheckBoxForegroundColor = foregroundColor;
+		mRadioButtonForegroundColor = foregroundColor;
+		mScrollPaneTrackColor = new Color(componentColor.getRed(), componentColor.getGreen(), componentColor.getBlue(), 50);
+		mSliderForegroundColor = new Color(componentColor.getRed(), componentColor.getGreen(), componentColor.getBlue(), 50);
+	}
 
 }

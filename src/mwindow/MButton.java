@@ -12,7 +12,7 @@ import jdk.nashorn.internal.codegen.ClassEmitter;
 public class MButton extends JButton
 {
     //The text
-    private JLabel label;
+    private MLabel label;
 
     //Is mouse hovering over button
     private boolean hasEntered = false;
@@ -45,7 +45,7 @@ public class MButton extends JButton
         setBorderPainted(false);
 
         //Add the Label
-        label = new JLabel(text);
+        label = new MLabel(text);
         label.setForeground(MColor.foregroundColor);
         label.setFont(labelFont);        
         add(label);
@@ -124,7 +124,7 @@ public class MButton extends JButton
     }
 
     //Set the label
-    public void setLabel(JLabel label)
+    public void setLabel(MLabel label)
     {
     	this.label = label;
     	repaint();
@@ -230,9 +230,9 @@ public class MButton extends JButton
                 }
             });
         button.setBackgroundColor(new Color(200, 100, 100));
-        button.setPreferredSize(new Dimension(200, 20));
+        button.setPreferredSize(new Dimension(200, 50));
         button.setLabelFont(new Font("Dialog", Font.BOLD, 18));
-        button.setLabelPosition(CENTER);
+        button.setLabelPosition(RIGHT);
         pane.add(button);
         window.add(pane);
     }

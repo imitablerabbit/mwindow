@@ -1,6 +1,7 @@
 package mwindow;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -56,6 +57,7 @@ public class MDragWindow extends JFrame
         this.size = size;
         setSize(size); 
         setBackground(MColor.backgroundColor);
+        getRootPane().setBorder(BorderFactory.createLineBorder(MColor.componentColor));
 
         //Centers the window
         setLocationRelativeTo(null);

@@ -6,7 +6,9 @@ public class Tester {
 
 	public static void main(String[] args) 
 	{
-		MColor.backgroundColor = Color.YELLOW;
+		//MColor.backgroundColor = new Color(255, 130, 130);
+		MColor.componentColor = new Color(30, 130, 135);
+		MColor.updateColor();
 		new DrawingApplication();
 		//new MBasicWindow();
 		//new MDragWindow();
