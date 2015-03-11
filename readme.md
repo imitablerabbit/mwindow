@@ -3,6 +3,7 @@
 <h2>Alternative design for Java swing</h2>
 
 <strong>NOTE: This package has only been tested and working on windows</strong>
+
 <strong>AIMS: To create a simplified yet appealing alternative for the current Java swing</strong>
 
 <h4>Version 1.0:</h4>
