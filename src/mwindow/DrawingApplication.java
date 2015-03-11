@@ -358,7 +358,7 @@ public class DrawingApplication extends MDragWindow
         messageText = new JTextArea();
         messageText.setText("");
         messageText.setEditable(false);
-        messageText.setBackground(UIManager.getColor("panel.background"));
+        messageText.setBackground(MColor.backgroundColor);
         messageScroll = new MScrollPane(messageText);
         messageScroll.setBorder(null);
         messages.setLayout(new BorderLayout());
@@ -457,7 +457,7 @@ public class DrawingApplication extends MDragWindow
                 @Override
                 public void actionPerformed(ActionEvent e)
                 {
-                    JOptionPane.showMessageDialog(null, "Drawing Application created by Mark Hillman");
+                    new MOptionPane("About", "Drawing Application created by Mark Hillman");
                 }
             });
 

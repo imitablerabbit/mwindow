@@ -1,6 +1,7 @@
 package mwindow;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -9,7 +10,7 @@ public class MDragWindow extends JFrame
     //Background color of the drag bar
     private Color dragBarColor;
     
-    //Options for drag pane
+	//Options for drag pane
     private boolean hasTitle = true;
     private boolean hasButtons = true;
     private boolean hasDecorations = true;
@@ -77,7 +78,7 @@ public class MDragWindow extends JFrame
                 buttons.setLayout(new FlowLayout(FlowLayout.RIGHT));
                 buttons.setBackground(dragBarColor);
                 mini = new MMinimizeButton(this);
-                close = new MCloseButton();
+                close = new MCloseButton(this);
 
                 //Adds the buttons to the bar
                 buttons.add(mini);
@@ -104,6 +105,14 @@ public class MDragWindow extends JFrame
         revalidate();   
     }
     
+    @Override
+    public Component add(Component c)
+    {
+    	super.add(c);
+    	revalidate();
+    	return this;
+    }
+    
     //GETTERS AND SETTERS
     //Returns the height of the title bar
     public int getDragBarHeight()
@@ -116,6 +125,38 @@ public class MDragWindow extends JFrame
     {
     	return drag.getPreferredSize().width;
     }    
+    
+    public Color getDragBarColor() {
+		return dragBarColor;
+	}
+
+	public void setDragBarColor(Color dragBarColor) {
+		this.dragBarColor = dragBarColor;
+	}
+
+	public boolean hasTitle() {
+		return hasTitle;
+	}
+
+	public void setHasTitle(boolean hasTitle) {
+		this.hasTitle = hasTitle;
+	}
+
+	public boolean hasButtons() {
+		return hasButtons;
+	}
+
+	public void setHasButtons(boolean hasButtons) {
+		this.hasButtons = hasButtons;
+	}
+
+	public boolean hasDecorations() {
+		return hasDecorations;
+	}
+
+	public void setHasDecorations(boolean hasDecorations) {
+		this.hasDecorations = hasDecorations;
+	}
     
     //TESTER
     //main method

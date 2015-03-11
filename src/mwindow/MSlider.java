@@ -15,6 +15,7 @@ public class MSlider extends JSlider
         super(start, end);
         setUI(new MSliderUI(this));        
         setPreferredSize(new Dimension(150, 50));
+        setBackground(MColor.backgroundColor);
         setLabelTable(this.createStandardLabels(5));        
         setPaintLabels(true);
         setMajorTickSpacing(5);

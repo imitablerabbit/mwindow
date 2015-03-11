@@ -15,7 +15,7 @@ public class Tester {
 		wnd.setLayout(new FlowLayout());
 		wnd.add(new MButton("Button"));
 		wnd.add(new MCheckBox());
-		wnd.add(new MCloseButton());
+		wnd.add(new MCloseButton(wnd));
 		wnd.add(new MDragPanel(wnd));
 		wnd.add(new MMinimizeButton(wnd));
 		wnd.add(new MPanel());

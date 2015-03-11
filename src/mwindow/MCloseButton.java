@@ -1,6 +1,9 @@
 package mwindow;
 
 import javax.swing.*;
+
+import com.sun.glass.events.WindowEvent;
+
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
@@ -14,7 +17,7 @@ public class MCloseButton extends JPanel
     Color backgroundColor = new Color(175, 0, 0);
     Color backgroundHoverColor = new Color(255, 255, 255, 50);
     
-    public MCloseButton()
+    public MCloseButton(JFrame parent)
     {
         setPreferredSize(new Dimension(20, 20));
 
@@ -24,7 +27,7 @@ public class MCloseButton extends JPanel
                 @Override
                 public void mousePressed(MouseEvent e)
                 {
-                    System.exit(1);
+                    parent.dispose();
                 }
 
                 @Override
