@@ -45,4 +45,5 @@
 </ul>
 <h2>Screenshots:</h2>
 <strong>Drawing Application</strong>
+
 ![Drawing Application](screenshots/drawing-application.png?raw=true)
